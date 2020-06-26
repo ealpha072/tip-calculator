@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tip calculator</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="container">
+		<h1>Tip calculator</h1>
+	<form>
+		<p>How much was the total bill?</p>
+		Ksh<input type="text" id="bill" value="" placeholder="Bill amount">
+
+		<p>Please rate the service</p>
+		<select id='qualityofserveice'>
+			<option disabled selected value="0" >--choose an option--</option>
+			<option value="0.3">5 Stars; Excellent!</option>
+			<option value="0.2">4 stars; Good</option>
+			<option value="0.15">3 stars; Fair</option>
+			<option value="0.10">2 Stars; Bad</option>
+			<option value="0.05">1 Star; Terrible</option>
+		</select>
+	</form>
+	<p>How many people are sharing the bill?</p>
+	<input type="text" id="numofpeople" placeholder="No of people"><br>
+	<button type="button" id="calculate">Calculate</button>
+
+	<div id="tipDisplay">
+		<sup>Ksh</sup><span id="tip"><strong>0.00</strong></strong></span><br>
+		<small id="each"><strong>each</strong></small>
+	</div>
+	</div>
+
+
+<script type="text/javascript">
+	function tipCalculator()
+	{
+		var billAmount = document.getElementById('bill').value;
+		var serviceQuality= 
+		document.getElementById('qualityofserveice').value;
+		var numOfPeople=document.getElementById('numofpeople').value;
+
+		//input validation
+		if(billAmount==="" || serviceQuality==0){
+			alert('Please enter Amount and Service Rating')
+			return; }
+
+		if(numOfPeople===""|| numOfPeople <=1){
+			numOfPeople=1;
+
+			document.getElementById('each').style.display="none";
+		} else{
+			document.getElementById('each').style.display="block";
+		}
+		
+		var total=(billAmount*serviceQuality)/numOfPeople;
+		total= Math.round(total*100)/100;
+		total=total.toFixed(2);
+
+		document.getElementById('tipDisplay').style.display='block';
+		document.getElementById('tip').innerHTML=total;
+		
+	}
+
+	document.getElementById('tipDisplay').style.display='none';
+	document.getElementById('each').style.display='none';
+
+	document.getElementById('calculate').onclick=function(){
+		tipCalculator();
+	};
+
+
+
+
+
+
+</script>
+</body>
+</html>

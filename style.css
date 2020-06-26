@@ -1,0 +1,55 @@
+body{
+    text-align:center;
+     background-color:lightgrey;
+
+}
+
+.container{
+    width:350px;
+    height:550px;
+    border:1px solid black;
+    margin:300px;
+    background-color:brown;
+    border-radius:20px
+}
+
+input, select{
+    border:2px solid black;
+    border-radius:10px;
+    height:30px;
+    margin:4px;
+}
+ select,input{
+     width:250px
+ }
+
+ h1,p{
+     font-size:large;
+     font-family:cursive;
+ }
+ h1{
+     color:white;
+     font-size:x-large;
+     background-color:black;
+     border-radius:inherit;
+     margin:15px 3px;
+     height:60px;
+     padding-top:10px
+ }
+ #calculate{
+     width:250px;
+     margin-top:10px;
+     border:3px solid black;
+     border-radius:20px;
+     height:50px;
+     font-size:x-large;
+     cursor:pointer;
+ }
+ #tipDisplay{
+     border:2px solid black;
+     margin:10px;
+     border-radius:20px;
+     font-style:italic;
+     font-size:x-large;
+     background-color:darkslategray
+ }
