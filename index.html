@@ -36,44 +36,37 @@
 	function tipCalculator()
 	{
 		var billAmount = document.getElementById('bill').value;
-		var serviceQuality= 
-		document.getElementById('qualityofserveice').value;
-		var numOfPeople=document.getElementById('numofpeople').value;
+		var serviceQuality = document.getElementById('qualityofserveice').value;
+		var numOfPeople = document.getElementById('numofpeople').value;
 
 		//input validation
-		if(billAmount==="" || serviceQuality==0){
+		if(billAmount === "" || serviceQuality == 0){
 			alert('Please enter Amount and Service Rating')
 			return; }
 
-		if(numOfPeople===""|| numOfPeople <=1){
-			numOfPeople=1;
+		if(numOfPeople === ""|| numOfPeople <= 1){
+			numOfPeople = 1;
 
-			document.getElementById('each').style.display="none";
+			document.getElementById('each').style.display = "none";
 		} else{
-			document.getElementById('each').style.display="block";
+			document.getElementById('each').style.display = "block";
 		}
 		
-		var total=(billAmount*serviceQuality)/numOfPeople;
-		total= Math.round(total*100)/100;
-		total=total.toFixed(2);
+		var total = (billAmount*serviceQuality)/numOfPeople;
+		total = Math.round(total*100)/100;
+		total = total.toFixed(2);
 
-		document.getElementById('tipDisplay').style.display='block';
-		document.getElementById('tip').innerHTML=total;
+		document.getElementById('tipDisplay').style.display = 'block';
+		document.getElementById('tip').innerHTML = total;
 		
 	}
 
-	document.getElementById('tipDisplay').style.display='none';
-	document.getElementById('each').style.display='none';
+	document.getElementById('tipDisplay').style.display = 'none';
+	document.getElementById('each').style.display = 'none';
 
-	document.getElementById('calculate').onclick=function(){
+	document.getElementById('calculate').onclick = function(){
 		tipCalculator();
 	};
-
-
-
-
-
-
 </script>
 </body>
 </html>
